@@ -23,7 +23,11 @@ namespace DungeonCrawl.Movement
         {
             navMeshAgent.enabled = !health.IsDead();
 
-            UpdateAnimator();
+            UpdateGroundMovementAnimator();
+            if(Input.GetKey(KeyCode.Space))
+            {
+                UpdateFlyMovementAnimator();
+            }
         }
         public void StartMoveAction(Vector3 destination, float speedFraction)
         {
@@ -42,12 +46,25 @@ namespace DungeonCrawl.Movement
             navMeshAgent.isStopped = true;
         }
 
-        private void UpdateAnimator()
+        private void UpdateGroundMovementAnimator()
         {
             Vector3 velocity = navMeshAgent.velocity;
             Vector3 localVelocity = transform.InverseTransformDirection(velocity);
             float speed = localVelocity.z;
             GetComponent<Animator>().SetFloat("ForwardSpeed", speed);
+        }
+
+        private void UpdateFlyMovementAnimator()
+        {
+            GetComponent<Animator>().SetTrigger("Fly");
+            Vector3 velocity = navMeshAgent.velocity;
+            Vector3 localVelocity = transform.InverseTransformDirection(velocity);
+            float speed = localVelocity.z;
+            GetComponent<Animator>().SetFloat("ForwardSpeed", speed);
+            if(speed <= 0)
+            {
+                GetComponent<Animator>().SetTrigger("Land");
+            }    
         }
     }
 
