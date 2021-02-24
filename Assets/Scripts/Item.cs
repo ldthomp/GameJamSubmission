@@ -7,7 +7,7 @@ namespace DungeonCrawl.Items
 {
     public class Item : MonoBehaviour
     {
-        [SerializeField] float hitPointMaxBonus = 100f;
+        //[SerializeField] float hitPointMaxBonus = 100f;
         bool orbPickedUp = false;
 
         private void OnTriggerEnter(Collider other)
@@ -15,7 +15,7 @@ namespace DungeonCrawl.Items
             if (other.gameObject.tag == "Player")
             {
                 print("player is in range of orb");
-                other.GetComponent<Health>().IncreaseHealthPointMax(hitPointMaxBonus);
+                //other.GetComponent<Health>().IncreaseHealthPointMax(hitPointMaxBonus); Todo add in about increasing health
                 orbPickedUp = true;
             }
         }

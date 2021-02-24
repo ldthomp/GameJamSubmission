@@ -1920,6 +1920,8 @@ GameObject:
   - component: {fileID: 534817333}
   - component: {fileID: 534817334}
   - component: {fileID: 534817335}
+  - component: {fileID: 2008019034}
+  - component: {fileID: 2008019035}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -2010,6 +2012,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbdfe3c9cb40d1f4689e4f38e12ca191, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  maxSpeed: 6
 --- !u!114 &534817333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2022,7 +2026,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 220cf88ede5a3764ba011da4d95d335f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponRange: 2
+  weaponRange: 4
   timeBetweenAttacks: 1
   weaponDamage: 10
 --- !u!114 &534817334
@@ -2054,6 +2058,31 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &2008019034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8418668881828549094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e05288cb96c610b468f3dedfdffb5a6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerSpeedFraction: 1
+--- !u!114 &2008019035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8418668881828549094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3dc9c1757df1b540b49458255b40186, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8705275878581301741
 GameObject:
   m_ObjectHideFlags: 0
