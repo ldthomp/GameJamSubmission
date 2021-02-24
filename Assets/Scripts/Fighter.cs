@@ -3,6 +3,7 @@ using DungeonCrawl.Movement;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 namespace DungeonCrawl.Combat
 {
@@ -15,10 +16,33 @@ namespace DungeonCrawl.Combat
         [SerializeField] float weaponDamage = 10f;
 
         float timeSinceLastAttack = Mathf.Infinity;
+        private void OnDrawGizmos()
+        {
+            Gizmos.DrawWireSphere(transform.position, weaponRange);
+        }
 
         private void Start()
         {
             movePlayer = GetComponent<Mover>();
+        }
+        void Update()
+        {
+            if (InteractWithCombat()) return;
+            timeSinceLastAttack += Time.deltaTime;
+            if (target == null) return;
+            if (target.IsDead()) return;
+
+            if (GetIsInRange())
+            {
+                print("player is in range and will stop");
+                movePlayer.Stop();
+            }
+            else
+            {
+                Debug.Log(gameObject.name + " mover is being cancelled");
+                //movePlayer.Cancel(); //stops Navmesh
+                AttackBehaviour();
+            }
         }
         private bool InteractWithCombat()
         {
@@ -33,16 +57,15 @@ namespace DungeonCrawl.Combat
                 {
                     continue;
                 }
-
+                if (Input.GetMouseButton(0))
+                
                 {
-                    if (Input.GetMouseButton(0))
-                    {
-                        movePlayer.MoveToCombat(target.transform.position);
-                        GetComponent<Fighter>().Attack(target.gameObject);
-
-                        //navmeshagent stopping distance = weaponrange from fighter
-                    }
+                    movePlayer.SetDestination(target.transform.position, weaponRange);
+                    GetComponent<Fighter>().Attack(target.gameObject);
+                    //navmeshagent stopping distance = weaponrange from fighter
+                    
                 }
+                
                 return true;
             }
             return false;
@@ -65,24 +88,6 @@ namespace DungeonCrawl.Combat
             if (combatTarget == null) { return false; }
             Health targetToTest = combatTarget.GetComponent<Health>();
             return targetToTest != null && !targetToTest.IsDead();
-        }
-        void Update()
-        {
-            if (InteractWithCombat()) return;
-            timeSinceLastAttack += Time.deltaTime;
-            if (target == null) return;
-            if (target.IsDead()) return;
-
-            if (!GetIsInRange())
-            {
-                movePlayer.MoveToCombat(target.transform.position);
-            }
-            else
-            {
-                Debug.Log(gameObject.name + " mover is being cancelled");
-                //movePlayer.Cancel(); //stops Navmesh
-                AttackBehaviour();
-            }
         }
 
         private void AttackBehaviour()
@@ -116,12 +121,12 @@ namespace DungeonCrawl.Combat
             return Vector3.Distance(transform.position, target.transform.position) < weaponRange;
         }
 
-        //public void Cancel()
-        //{
-        //    StopAttack();
-        //    target = null;
-        //    movePlayer.Cancel();
-        //}
+        public void Cancel()
+        {
+            StopAttack();
+            target = null;
+            movePlayer.Cancel();
+        }
 
         private void StopAttack()
         {

@@ -18,7 +18,7 @@ namespace DungeonCrawl.Core
         public void TakeDamage(float damage)
         {
             healthPoints = Mathf.Max(healthPoints - damage, 0);
-            print("Health =" + healthPoints);
+            //print("Health =" + healthPoints);
             if (healthPoints == 0)
             {
                 Death();
