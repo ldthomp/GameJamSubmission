@@ -14,6 +14,8 @@ namespace DungeonCrawl.Combat
         [SerializeField] float weaponRange = 2f;
         [SerializeField] float timeBetweenAttacks = 1f;
         [SerializeField] float weaponDamage = 10f;
+        [SerializeField] GameObject fireballFX;
+
 
         float timeSinceLastAttack = Mathf.Infinity;
 
@@ -44,6 +46,7 @@ namespace DungeonCrawl.Combat
                 {
                     print("shooting fireball");
                     GetComponent<Animator>().SetTrigger("Fireball Attack");
+                    fireballFX.SetActive(true);
                 }
             }
             timeSinceLastAttack += Time.deltaTime;

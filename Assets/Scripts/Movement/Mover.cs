@@ -43,9 +43,13 @@ namespace DungeonCrawl.Movement
 
         public void MoveTo(Vector3 destination, float speedFraction)
         {
+
+            navMeshAgent.enabled = true;
             navMeshAgent.destination = destination;
             navMeshAgent.speed = maxSpeed * Mathf.Clamp01(speedFraction);
             navMeshAgent.isStopped = false;
+            
+
         }
         public void Cancel()
         {
@@ -56,7 +60,7 @@ namespace DungeonCrawl.Movement
         {
             Vector3 velocity = navMeshAgent.velocity;
             Vector3 localVelocity = transform.InverseTransformDirection(velocity);
-            float speed = localVelocity.z;
+            speed = localVelocity.z;
             animator.SetFloat("ForwardSpeed", speed);
         }
 
@@ -65,14 +69,8 @@ namespace DungeonCrawl.Movement
             animator.SetTrigger("Fly");
             Vector3 velocity = navMeshAgent.velocity;
             Vector3 localVelocity = transform.InverseTransformDirection(velocity);
-            float speed = localVelocity.z;
+            speed = localVelocity.z;
             animator.SetFloat("ForwardSpeed", speed);
-            if (speed <= 0)
-            {
-                animator.ResetTrigger("Fly");
-                print(gameObject.name + "landing");
-                animator.SetBool("Land", true) ;
-            }
         }
     }
 
