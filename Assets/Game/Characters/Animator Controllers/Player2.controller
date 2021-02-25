@@ -118,17 +118,8 @@ AnimatorStateMachine:
     m_State: {fileID: 8134239550718971791}
     m_Position: {x: 300, y: -30, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: 7640418455113824292}
-    m_Position: {x: 510, y: 10, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: -5482391194017977722}
-    m_Position: {x: 590, y: 100, z: 0}
-  - serializedVersion: 1
     m_State: {fileID: -4472078857469345060}
     m_Position: {x: 410, y: 190, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: -3009758688922543579}
-    m_Position: {x: 750, y: 10, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions:
   - {fileID: -5948005836608252298}
@@ -314,7 +305,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Player1
+  m_Name: Player2
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: ForwardSpeed
@@ -408,7 +399,7 @@ BlendTree:
   m_Name: Blend Tree
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 53822ae0b4a40a24b97e0cf0388e4248, type: 3}
+    m_Motion: {fileID: 7400000, guid: e02bdaca3b0c3284ab993c4eba862036, type: 3}
     m_Threshold: 0.016393442
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
@@ -416,7 +407,7 @@ BlendTree:
     m_DirectBlendParameter: Blend
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 555c2f8b240202a4c8f3c3f412587e5a, type: 3}
+    m_Motion: {fileID: 7400000, guid: 5fa09084d33ac9046a4a22372e78213e, type: 3}
     m_Threshold: 1.0752487
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
@@ -424,7 +415,7 @@ BlendTree:
     m_DirectBlendParameter: Blend
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 93048e03d4dc597468fce555d02e9274, type: 3}
+    m_Motion: {fileID: 7400000, guid: 28a39de94def6c84ca4b447fa78a3a66, type: 3}
     m_Threshold: 1.9836066
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1.3
@@ -519,7 +510,6 @@ AnimatorState:
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -1861246792473700926}
-  - {fileID: -6511799844115280449}
   - {fileID: -3180653702317340169}
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
