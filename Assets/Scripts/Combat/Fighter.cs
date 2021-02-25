@@ -38,6 +38,14 @@ namespace DungeonCrawl.Combat
         }
         void Update()
         {
+            if (Input.GetKey(KeyCode.F))
+            {
+                if(gameObject.tag == "Player")
+                {
+                    print("shooting fireball");
+                    GetComponent<Animator>().SetTrigger("Fireball Attack");
+                }
+            }
             timeSinceLastAttack += Time.deltaTime;
             if (target == null) return;
             if (target.IsDead()) return;

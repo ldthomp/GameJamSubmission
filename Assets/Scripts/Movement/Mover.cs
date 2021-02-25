@@ -8,15 +8,17 @@ namespace DungeonCrawl.Movement
     {
         [SerializeField] Transform target;
         [SerializeField] float maxSpeed = 6f;
-
+        float speed; 
 
         NavMeshAgent navMeshAgent;
         Health health;
+        Animator animator;
 
         private void Start()
         {
             navMeshAgent = GetComponent<NavMeshAgent>();
             health = GetComponent<Health>();
+            animator = GetComponent<Animator>();
         }
 
         void Update()
@@ -24,10 +26,14 @@ namespace DungeonCrawl.Movement
             navMeshAgent.enabled = !health.IsDead();
 
             UpdateGroundMovementAnimator();
-            if(Input.GetKey(KeyCode.Space))
+            if(Input.GetKeyDown(KeyCode.Space))
             {
-                UpdateFlyMovementAnimator();
+                if(gameObject.tag == "Player")
+                {
+                    UpdateFlyMovementAnimator();
+                }
             }
+
         }
         public void StartMoveAction(Vector3 destination, float speedFraction)
         {
@@ -51,20 +57,22 @@ namespace DungeonCrawl.Movement
             Vector3 velocity = navMeshAgent.velocity;
             Vector3 localVelocity = transform.InverseTransformDirection(velocity);
             float speed = localVelocity.z;
-            GetComponent<Animator>().SetFloat("ForwardSpeed", speed);
+            animator.SetFloat("ForwardSpeed", speed);
         }
 
         private void UpdateFlyMovementAnimator()
         {
-            GetComponent<Animator>().SetTrigger("Fly");
+            animator.SetTrigger("Fly");
             Vector3 velocity = navMeshAgent.velocity;
             Vector3 localVelocity = transform.InverseTransformDirection(velocity);
             float speed = localVelocity.z;
-            GetComponent<Animator>().SetFloat("ForwardSpeed", speed);
-            if(speed <= 0)
+            animator.SetFloat("ForwardSpeed", speed);
+            if (speed <= 0)
             {
-                GetComponent<Animator>().SetTrigger("Land");
-            }    
+                animator.ResetTrigger("Fly");
+                print(gameObject.name + "landing");
+                animator.SetBool("Land", true) ;
+            }
         }
     }
 
