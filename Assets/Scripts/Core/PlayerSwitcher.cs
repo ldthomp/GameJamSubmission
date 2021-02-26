@@ -7,9 +7,12 @@ namespace DungeonCrawl.Core
     public class PlayerSwitcher : MonoBehaviour
     {
         [SerializeField] int currentPlayer = 0;
+
+
         void Start()
         {
             SetPlayerActive();
+
         }
 
         void Update()
@@ -24,18 +27,20 @@ namespace DungeonCrawl.Core
                 SetPlayerActive();
             }
         }
-        private void SetPlayerActive()
+        private void SetPlayerActive() //todo set playercontroller active
         {
-            int playerIndex = 0;
-            foreach (Transform player in transform)
+            int playerIndex = 0; //playercontrollerindex
+            foreach (Transform player in transform)  // for each PlayerController playerController in playableCharacters - do this
             {
                 if (playerIndex == currentPlayer)
                 {
-                    player.gameObject.SetActive(true);
+                    player.gameObject.SetActive(true); // playercontroller.getcomponent of type Playercontroller. enabled = true
                 }
                 else
                 {
-                    player.gameObject.SetActive(false);
+                    player.gameObject.SetActive(false); // playercontroller.getcomponent of type Playercontroller. enabled = false
+                    //and follow the currentPlayer
+                    //if navmeshagent.ispathstale = true, then wait // also open the bool up to the whole class
                 }
                 playerIndex++;
             }
