@@ -1,6 +1,10 @@
-﻿using System.Collections;
+﻿using Cinemachine;
+using DungeonCrawl.Control;
+using DungeonCrawl.Movement;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 namespace DungeonCrawl.Core
 {
@@ -8,11 +12,14 @@ namespace DungeonCrawl.Core
     {
         [SerializeField] int currentPlayer = 0;
 
+        Mover mover;
+
+        Vector3 activePlayer;
 
         void Start()
         {
             SetPlayerActive();
-
+            mover = GetComponent<Mover>();
         }
 
         void Update()
@@ -29,20 +36,24 @@ namespace DungeonCrawl.Core
         }
         private void SetPlayerActive() //todo set playercontroller active
         {
-            int playerIndex = 0; //playercontrollerindex
-            foreach (Transform player in transform)  // for each PlayerController playerController in playableCharacters - do this
-            {
-                if (playerIndex == currentPlayer)
+            int playerControllerIndex = 0; 
+            foreach (Transform playerController in transform)
+            {                
+                if (playerControllerIndex == currentPlayer)
                 {
-                    player.gameObject.SetActive(true); // playercontroller.getcomponent of type Playercontroller. enabled = true
+                    playerController.GetComponentInChildren<PlayerController>().enabled = true;
+                    playerController.GetComponentInChildren<CinemachineVirtualCamera>().enabled = true;
+
+                    activePlayer = playerController.transform.position;
+
                 }
                 else
                 {
-                    player.gameObject.SetActive(false); // playercontroller.getcomponent of type Playercontroller. enabled = false
-                    //and follow the currentPlayer
-                    //if navmeshagent.ispathstale = true, then wait // also open the bool up to the whole class
+                    // sets players inactive but doesn't move them. If manage to follow active player, also need to check navmeshagent.ifpathstale 
+                    playerController.GetComponentInChildren<CinemachineVirtualCamera>().enabled = false;
+                    playerController.GetComponentInChildren<PlayerController>().enabled = false;
                 }
-                playerIndex++;
+                playerControllerIndex++;
             }
         }
         private void ProcessKeyInput()

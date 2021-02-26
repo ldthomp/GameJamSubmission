@@ -14,7 +14,6 @@ namespace DungeonCrawl.Combat
         [SerializeField] float weaponRange = 2f;
         [SerializeField] float timeBetweenAttacks = 1f;
         [SerializeField] float weaponDamage = 10f;
-        [SerializeField] GameObject fireballFX;
 
 
         float timeSinceLastAttack = Mathf.Infinity;
@@ -40,15 +39,15 @@ namespace DungeonCrawl.Combat
         }
         void Update()
         {
-            if (Input.GetKey(KeyCode.F))
+            if(gameObject.tag == "Player" && Input.GetKey(KeyCode.F))
             {
-                if(gameObject.tag == "Player")
+                if (gameObject.GetComponent<FireballBehaviour>() == null) return;
+                else
                 {
-                    print("shooting fireball");
-                    GetComponent<Animator>().SetTrigger("Fireball Attack");
-                    fireballFX.SetActive(true);
+                    GetComponent<FireballBehaviour>().ShootFireball();
                 }
             }
+            
             timeSinceLastAttack += Time.deltaTime;
             if (target == null) return;
             if (target.IsDead()) return;

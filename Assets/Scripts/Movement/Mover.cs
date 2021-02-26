@@ -1,6 +1,7 @@
 ﻿using UnityEngine.AI;
 using UnityEngine;
 using DungeonCrawl.Core;
+using DungeonCrawl.Control;
 
 namespace DungeonCrawl.Movement
 {
@@ -43,13 +44,10 @@ namespace DungeonCrawl.Movement
 
         public void MoveTo(Vector3 destination, float speedFraction)
         {
-
             navMeshAgent.enabled = true;
             navMeshAgent.destination = destination;
             navMeshAgent.speed = maxSpeed * Mathf.Clamp01(speedFraction);
             navMeshAgent.isStopped = false;
-            
-
         }
         public void Cancel()
         {
