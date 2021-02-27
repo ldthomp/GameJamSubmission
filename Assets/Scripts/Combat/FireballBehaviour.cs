@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using CartoonFX;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,11 +8,14 @@ namespace DungeonCrawl.Combat
     public class FireballBehaviour : MonoBehaviour
     {
         [SerializeField] float fireballRange = 8f;
-        [SerializeField] float nextFireball = 5f;
-        [SerializeField] float fireballRate = 5f;
-        [SerializeField] GameObject fireballPrefabVFX;
 
+        //add in for amending fireball rate and cooldowns. Would require a timer.
+        //[SerializeField] float nextFireball = 5f;
+        //[SerializeField] float fireballRate = 5f;
         
+        [SerializeField] GameObject fireballPrefabVFX;
+        [SerializeField] GameObject fireballSpawnPoint;
+
 
         float fireballAnimLength = 0.19f;
 
@@ -36,12 +40,22 @@ namespace DungeonCrawl.Combat
         {
             print("shooting fireball");
             GetComponent<Animator>().SetTrigger("Fireball Attack");
+
             yield return new WaitForSeconds(fireballAnimLength);
             GetComponent<Animator>().ResetTrigger("Fireball Attack");
-            Instantiate(fireballPrefabVFX, transform.position, Quaternion.identity,transform);
-            yield return new WaitForSeconds(fireballRange);
-            Destroy(fireballPrefabVFX);
+            GameObject fireball = Instantiate(fireballPrefabVFX, fireballSpawnPoint.transform.position, fireballSpawnPoint.transform.rotation); //todo max amount at one time = 1
+            //GetComponent<MoveFireball>().FireballMovement();
+            DestroyFireball(fireball);
+            
+
             //fireballFX.SetActive(true);
+        }
+
+
+
+        private void DestroyFireball(GameObject fireball)
+        {
+            Destroy(fireball, fireballRange);
         }
     }
 }

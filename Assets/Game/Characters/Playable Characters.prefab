@@ -140,7 +140,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1380615360}
   m_LocalRotation: {x: -0.43016744, y: -0.21548654, z: 0.10968848, w: -0.8697643}
-  m_LocalPosition: {x: 11.390378, y: 19.794552, z: -45.813725}
+  m_LocalPosition: {x: 11.389896, y: 19.794556, z: -45.81347}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 136218122}
@@ -533,7 +533,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5057129451528319314}
   m_LocalRotation: {x: -0.43016744, y: -0.21548654, z: 0.10968848, w: -0.8697643}
-  m_LocalPosition: {x: 9.490377, y: 19.794554, z: -44.493725}
+  m_LocalPosition: {x: 9.489896, y: 19.794556, z: -44.49347}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8986859362239530159}
@@ -647,7 +647,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6830448042392655615}
   m_LocalRotation: {x: -0.43016744, y: -0.21548654, z: 0.10968848, w: -0.8697643}
-  m_LocalPosition: {x: 13.350377, y: 19.794552, z: -47.253723}
+  m_LocalPosition: {x: 13.3498955, y: 19.794554, z: -47.253468}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3512306402659610333}
@@ -776,11 +776,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Speed Player Controller
       objectReference: {fileID: 0}
-    - target: {fileID: 1081143836299105594, guid: f8838c2256e57c444a87c5441504c15f,
-        type: 3}
-      propertyPath: m_Speed
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 8425324045522026949, guid: f8838c2256e57c444a87c5441504c15f,
         type: 3}
       propertyPath: m_RootOrder
@@ -836,8 +831,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 8577516886913444390, guid: f8838c2256e57c444a87c5441504c15f, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8838c2256e57c444a87c5441504c15f, type: 3}
 --- !u!4 &4631675811758114929 stripped
 Transform:
@@ -912,8 +906,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flying Player Controller
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 5935209830018649303, guid: 130527a85183cb542b8ed70470f9d261, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 130527a85183cb542b8ed70470f9d261, type: 3}
 --- !u!4 &4631675811030385393 stripped
 Transform:

@@ -32,14 +32,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1081143836299105588}
-  m_LocalRotation: {x: -0, y: -0.9445242, z: -0, w: 0.32844183}
+  m_LocalRotation: {x: 0, y: -0.94452554, z: 0, w: 0.32843807}
   m_LocalPosition: {x: 12.5, y: 10.25, z: -37.86}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_Children:
   - {fileID: 8577516886913444409}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -141.65201, z: 0}
 --- !u!95 &5276615141909647528
 Animator:
   serializedVersion: 3
@@ -69,7 +69,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 8
+  m_Speed: 10
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 300
@@ -124,7 +124,6 @@ MonoBehaviour:
   weaponRange: 4
   timeBetweenAttacks: 1
   weaponDamage: 10
-  fireballFX: {fileID: 0}
 --- !u!114 &8923284703961689828
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -234,7 +233,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 971994671, guid: 31a77d5e57bdce243a1c38bc0ba2808f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 31a77d5e57bdce243a1c38bc0ba2808f, type: 3}
 --- !u!4 &8577516886913444409 stripped
 Transform:

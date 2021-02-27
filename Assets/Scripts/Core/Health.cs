@@ -29,6 +29,7 @@ namespace DungeonCrawl.Core
         {
             if (isDead) { return; }
             isDead = true;
+            if (gameObject.GetComponent<Animator>() == null) return;
             GetComponent<Animator>().SetTrigger("Die");
             GetComponent<ActionScheduler>().CancelCurentAction();
         }
