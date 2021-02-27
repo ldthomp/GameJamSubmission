@@ -140,7 +140,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1380615360}
   m_LocalRotation: {x: -0.43016744, y: -0.21548654, z: 0.10968848, w: -0.8697643}
-  m_LocalPosition: {x: 11.389977, y: 19.794556, z: -45.813515}
+  m_LocalPosition: {x: 11.390378, y: 19.794552, z: -45.813725}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 136218122}
@@ -338,7 +338,7 @@ MonoBehaviour:
   m_YDamping: 1
   m_ZDamping: 1
   m_TargetMovementOnly: 1
-  m_ScreenX: 0.4874687
+  m_ScreenX: 0.48746872
   m_ScreenY: 0.5
   m_CameraDistance: 12
   m_DeadZoneWidth: 0.3
@@ -533,7 +533,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5057129451528319314}
   m_LocalRotation: {x: -0.43016744, y: -0.21548654, z: 0.10968848, w: -0.8697643}
-  m_LocalPosition: {x: 11.389977, y: 19.794556, z: -45.813515}
+  m_LocalPosition: {x: 9.490377, y: 19.794554, z: -44.493725}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8986859362239530159}
@@ -559,7 +559,7 @@ MonoBehaviour:
   m_Priority: 10
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 0}
-  m_Follow: {fileID: 7157687174504224913}
+  m_Follow: {fileID: 4631675811030385393}
   m_Lens:
     FieldOfView: 74
     OrthographicSize: 5
@@ -647,7 +647,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6830448042392655615}
   m_LocalRotation: {x: -0.43016744, y: -0.21548654, z: 0.10968848, w: -0.8697643}
-  m_LocalPosition: {x: 11.389977, y: 19.794556, z: -45.813515}
+  m_LocalPosition: {x: 13.350377, y: 19.794552, z: -47.253723}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3512306402659610333}
@@ -673,7 +673,7 @@ MonoBehaviour:
   m_Priority: 10
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 0}
-  m_Follow: {fileID: 7157687174504224913}
+  m_Follow: {fileID: 4631675811758114929}
   m_Lens:
     FieldOfView: 74
     OrthographicSize: 5
@@ -756,8 +756,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 7356457143221676911, guid: a38e4ec911ce3b24b99e9727e0966ebe, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a38e4ec911ce3b24b99e9727e0966ebe, type: 3}
 --- !u!4 &7157687174504224913 stripped
 Transform:

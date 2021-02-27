@@ -9,32 +9,39 @@ namespace DungeonCrawl.Combat
         [SerializeField] float fireballRange = 8f;
         [SerializeField] float nextFireball = 5f;
         [SerializeField] float fireballRate = 5f;
-        [SerializeField] GameObject fireballFX;
+        [SerializeField] GameObject fireballPrefabVFX;
 
-        Ray lastRay;
+        
+
+        float fireballAnimLength = 0.19f;
+
 
         private void Start()
         {
-
+            
         }
         private void Update()
         {
-            //print(fireballRange * Time.deltaTime);
+
         }
         public void ShootFireball ()
         {
-            lastRay = new Ray (transform.position,Vector3.forward);
-            Debug.DrawRay(transform.position, Vector3.forward, Color.white * 100);
+            //print("shooting fireball");
+            StartCoroutine(Shoot());
 
+
+        }
+
+        IEnumerator Shoot()
+        {
             print("shooting fireball");
-            //GetComponent<Animator>().SetTrigger("Fireball Attack");
+            GetComponent<Animator>().SetTrigger("Fireball Attack");
+            yield return new WaitForSeconds(fireballAnimLength);
+            GetComponent<Animator>().ResetTrigger("Fireball Attack");
+            Instantiate(fireballPrefabVFX, transform.position, Quaternion.identity,transform);
+            yield return new WaitForSeconds(fireballRange);
+            Destroy(fireballPrefabVFX);
             //fireballFX.SetActive(true);
         }
-
-        private void OnEnable()
-        {
-            transform.localPosition = Vector3.forward * Time.deltaTime;
-        }
     }
-
 }

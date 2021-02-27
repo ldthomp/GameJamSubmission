@@ -44,7 +44,7 @@ namespace DungeonCrawl.Core
                     playerController.GetComponentInChildren<PlayerController>().enabled = true;
                     playerController.GetComponentInChildren<CinemachineVirtualCamera>().enabled = true;
 
-                    activePlayer = playerController.transform.position;
+                    //activePlayer = playerController.transform.position;
 
                 }
                 else

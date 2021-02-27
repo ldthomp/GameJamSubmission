@@ -39,7 +39,7 @@ namespace DungeonCrawl.Combat
         }
         void Update()
         {
-            if(gameObject.tag == "Player" && Input.GetKey(KeyCode.F))
+            if(gameObject.tag == "Player" && Input.GetKeyDown(KeyCode.F))
             {
                 if (gameObject.GetComponent<FireballBehaviour>() == null) return;
                 else
