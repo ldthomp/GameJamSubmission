@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 489784}
   - component: {fileID: 3312352}
   - component: {fileID: 2315566}
+  - component: {fileID: 1313233093384828744}
+  - component: {fileID: 1751121684473006824}
   m_Layer: 0
   m_Name: Dead_Bush_b_02
   m_TagString: Untagged
@@ -79,3 +81,29 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &1313233093384828744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 111778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6413c9b67d6e8b34180a3f7cfeddbb91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!64 &1751121684473006824
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 111778}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: dbfc53f34ed02404e960a7ef6a0f76cb, type: 3}
