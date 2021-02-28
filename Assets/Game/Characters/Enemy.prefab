@@ -166,7 +166,7 @@ MonoBehaviour:
   gizmosOn: 1
   patrolPath: {fileID: 0}
   waypointTolerance: 1
-  waypointDwellTime: 3
+  waypointDwellTime: 1.5
   patrolSpeedFraction: 0.2
 --- !u!114 &2947333281121771974
 MonoBehaviour:

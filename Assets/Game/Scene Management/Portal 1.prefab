@@ -105,9 +105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a3210eaa5055564485c5f8ae19c89da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: -1
-  spawnPoint: {fileID: 0}
-  destination: 0
-  fadeOutTime: 1
-  fadeInTime: 1
-  fadeWaitTime: 0.5
+  winScreen: {fileID: 0}
+  player1: {fileID: 5168023198819491215, guid: a38e4ec911ce3b24b99e9727e0966ebe, type: 3}
+  player2: {fileID: 1979172129491597042, guid: 130527a85183cb542b8ed70470f9d261, type: 3}
+  player3: {fileID: 8923284703961689828, guid: f8838c2256e57c444a87c5441504c15f, type: 3}

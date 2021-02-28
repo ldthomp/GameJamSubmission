@@ -33,6 +33,10 @@ namespace DungeonCrawl.Core
             GetComponent<Animator>().SetTrigger("Die");
             GetComponent<ActionScheduler>().CancelCurentAction();
         }
+        public float GetHealthPoints()
+        {
+            return healthPoints;
+        }    
     }
 
 }
